@@ -1,6 +1,6 @@
 # RCAM-backend
 
-### Initialisation
+### Initialisation (Windows)
 
 1. Virtual Environment
 
