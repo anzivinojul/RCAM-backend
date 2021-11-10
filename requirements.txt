@@ -4,6 +4,7 @@ black==21.10b0
 click==8.0.3
 colorama==0.4.4
 Django==3.2.9
+django-filter==21.1
 djangorestframework==3.12.4
 isort==5.10.1
 lazy-object-proxy==1.6.0
