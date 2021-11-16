@@ -3,10 +3,12 @@ from rest_framework import routers
 from django.urls import path
 
 from . import views
-from .views import IngredientsRecetteDetail, IngredientsRecetteViewSet, RecetteViewSet
+from .views import IngredientsRecetteDetail, IngredientsRecetteViewSet, RecetteViewSetByCategory, RecetteViewSetByName, RecetteViewSetByNameAndByCategory
 
 recetteRouter = routers.DefaultRouter()
-recetteRouter.register('byName', RecetteViewSet)
+recetteRouter.register('byName', RecetteViewSetByName)
+recetteRouter.register('byCategory', RecetteViewSetByCategory)
+recetteRouter.register('byNameAndByCategory', RecetteViewSetByNameAndByCategory)
 
 ingredientsRouter = routers.DefaultRouter()
 ingredientsRouter.register('byRecette', IngredientsRecetteViewSet)

@@ -1,8 +1,11 @@
 from django.db import models
+from category.models import CategorieRecette
 
 class Recette(models.Model) :
     name = models.CharField(max_length=255)
     time = models.CharField(max_length=5)
+    img = models.ImageField(upload_to='recette_img', null = True)
+    category = models.ForeignKey(CategorieRecette, related_name='categories', on_delete=models.SET_NULL, null = True)
     favorite = models.BooleanField()
 
     DifficultyType = models.TextChoices('DifficultyType', 'Facile Intermédiaire Difficile')

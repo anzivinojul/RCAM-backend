@@ -16,11 +16,24 @@ class RecetteDetail(generics.RetrieveUpdateDestroyAPIView) :
     permission_classes = (AllowAny,)
     serializer_class = RecetteSerializer
 
-class RecetteViewSet(viewsets.ModelViewSet) :
+class RecetteViewSetByName(viewsets.ModelViewSet) :
     queryset = Recette.objects.all()
     permission_classes = (AllowAny,)
     serializer_class = RecetteSerializer
     search_fields = ['name']
+
+class RecetteViewSetByCategory(viewsets.ModelViewSet) :
+    queryset = Recette.objects.all()
+    permission_classes = (AllowAny,)
+    serializer_class = RecetteSerializer
+    filter_fields = ['category__name']
+
+class RecetteViewSetByNameAndByCategory(viewsets.ModelViewSet) :
+    queryset = Recette.objects.all()
+    permission_classes = (AllowAny,)
+    serializer_class = RecetteSerializer
+    search_fields = ['name']
+    filter_fields = ['category__name']
 
 class IngredientsRecetteList(generics.ListCreateAPIView) : 
     queryset = IngredientsRecette.objects.all()

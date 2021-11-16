@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'recette.apps.RecetteConfig',
+    'category.apps.CategoryConfig',
 ]
 
 REST_FRAMEWORK = {
@@ -101,6 +102,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+MEDIA_ROOT='/var/www/media/'
+MEDIA_URL = '/media/'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
