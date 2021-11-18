@@ -9,7 +9,7 @@ from .serializers import RecetteSerializer, IngredientsRecetteSerializer, Prepar
 
 class RecetteList(generics.ListCreateAPIView) :
     queryset = Recette.objects.all()
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
     serializer_class = RecetteSerializer
 
 class RecetteDetail(generics.RetrieveUpdateDestroyAPIView) :
