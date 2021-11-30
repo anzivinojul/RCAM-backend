@@ -45,9 +45,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'corsheaders',
+    'versatileimagefield',
 
     'recette.apps.RecetteConfig',
     'category.apps.CategoryConfig',
+    'image.apps.ImageConfig',
 ]
 
 REST_FRAMEWORK = {

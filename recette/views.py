@@ -17,6 +17,11 @@ class RecetteDetail(generics.RetrieveUpdateDestroyAPIView) :
     permission_classes = (AllowAny,)
     serializer_class = RecetteSerializer
 
+class RecetteCreate(generics.CreateAPIView) :
+    queryset = Recette.objects.all()
+    permission_classes = (AllowAny,)
+    serializer_class = RecetteSerializer
+
 class RecetteViewSetByName(viewsets.ModelViewSet) :
     queryset = Recette.objects.all()
     permission_classes = (AllowAny,)

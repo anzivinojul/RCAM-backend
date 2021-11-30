@@ -1,15 +1,22 @@
+from enum import unique
 from django.db import models
+from django.db.models.deletion import CASCADE
 from category.models import CategorieRecette
+from image.models import ImagesRecette
 
 class Recette(models.Model) :
     name = models.CharField(max_length=255)
-    time = models.CharField(max_length=5)
-    img = models.ImageField(upload_to='recette_img', null = True)
+    time_preparation = models.CharField(max_length=5, null = True)
+    time_cooking = models.CharField(max_length=5, null = True)
+    img = models.ForeignKey(ImagesRecette, related_name='images', on_delete=models.SET_NULL, null = True)
     category = models.ForeignKey(CategorieRecette, related_name='categories', on_delete=models.SET_NULL, null = True)
     favorite = models.BooleanField()
 
     DifficultyType = models.TextChoices('DifficultyType', 'Facile Intermédiaire Difficile')
     difficulty = models.CharField(choices=DifficultyType.choices, max_length=20)
+
+    class Meta: 
+        ordering = ['-name']
 
     def __str__(self) :
         return self.name

@@ -19,6 +19,7 @@ preparationsRouter.register('byRecette', PreparationRecetteViewSetByRecette)
 urlpatterns = [
     path("", views.RecetteList.as_view()),
     path("<int:pk>", views.RecetteDetail.as_view()),
+    path("add", views.RecetteCreate.as_view()),
     path("findRecettes/", include(recetteRouter.urls)),
     path("ingredients", views.IngredientsRecetteList.as_view()),
     path("ingredients/<int:pk>", views.IngredientsRecetteDetail.as_view()),
