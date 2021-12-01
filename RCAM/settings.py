@@ -121,11 +121,11 @@ WSGI_APPLICATION = 'RCAM.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config("database_name"),
-        'USER': config("database_user"),
-        'PASSWORD': config("database_password"),
-        'HOST': config("database_host"),
-        'PORT': config("database_port"),
+        'NAME': 'dfdmvd9u4ja8e7',
+        'USER': 'lwnpxwqopjotke',
+        'PASSWORD': '74f5838385aa6f74ea10a0a6cb81367fff532332232ba008ec811ecf59cce6e8',
+        'HOST': 'ec2-52-213-167-210.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
