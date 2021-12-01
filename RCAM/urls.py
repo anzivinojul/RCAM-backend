@@ -19,10 +19,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from drf_spectacular.views import SpectacularSwaggerView, SpectacularAPIView
+
 urlpatterns = [
     path('recettes/', include("recette.urls"), name = "recette"),
     path('category/', include("category.urls"), name = "category"),
     path('image/', include("image.urls"), name = "image"),
     path('admin/', admin.site.urls),
     path('auth/', include('auth.urls'), name="authentication"),
+    path('schema/', SpectacularAPIView.as_view(), name="schema"),
+    path('docs/', SpectacularSwaggerView.as_view(url_name="schema"), name="docs")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

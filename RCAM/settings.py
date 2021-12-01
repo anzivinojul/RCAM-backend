@@ -20,20 +20,20 @@ from decouple import config
 from django.utils.timezone import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'rcam-backend.herokuapp.com'
+    #'rcam-backend.herokuapp.com'
 ]
 
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'django_filters',
+    'drf_spectacular',
     'corsheaders',
     'versatileimagefield',
 
@@ -68,6 +69,7 @@ REST_FRAMEWORK = {
         'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
+    'DEFAULT_SCHEMA_CLASS': "drf_spectacular.openapi.AutoSchema"
 }
 
 SIMPLE_JWT = {
@@ -121,10 +123,10 @@ WSGI_APPLICATION = 'RCAM.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dfdmvd9u4ja8e7',
-        'USER': 'lwnpxwqopjotke',
-        'PASSWORD': '74f5838385aa6f74ea10a0a6cb81367fff532332232ba008ec811ecf59cce6e8',
-        'HOST': 'ec2-52-213-167-210.eu-west-1.compute.amazonaws.com',
+        'NAME': 'da3v9o5otdraff',
+        'USER': 'vbykbkkegffvlf',
+        'PASSWORD': '0421c6d86c6bb5a7f9caef30403f2918a30734bb6e08d3932619afc248cc6b39',
+        'HOST': 'ec2-34-242-89-204.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -168,12 +170,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/

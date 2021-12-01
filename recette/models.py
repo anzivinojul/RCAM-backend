@@ -16,7 +16,7 @@ class Recette(models.Model) :
     difficulty = models.CharField(choices=DifficultyType.choices, max_length=20)
 
     class Meta: 
-        ordering = ['-name']
+        ordering = ['name']
 
     def __str__(self) :
         return self.name
