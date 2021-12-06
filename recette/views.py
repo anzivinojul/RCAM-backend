@@ -5,7 +5,7 @@ from rest_framework import generics, viewsets
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from .models import Recette, IngredientsRecette, PreparationRecette
-from .serializers import RecetteSerializer, IngredientsRecetteSerializer, PreparationRecetteSerializer
+from .serializers import RecetteCreateSerializer, RecetteSerializer, IngredientsRecetteSerializer, PreparationRecetteSerializer
 
 class RecetteList(generics.ListCreateAPIView) :
     queryset = Recette.objects.all()
@@ -20,7 +20,7 @@ class RecetteDetail(generics.RetrieveUpdateDestroyAPIView) :
 class RecetteCreate(generics.CreateAPIView) :
     queryset = Recette.objects.all()
     permission_classes = (AllowAny,)
-    serializer_class = RecetteSerializer
+    serializer_class = RecetteCreateSerializer
 
 class RecetteViewSetByName(viewsets.ModelViewSet) :
     queryset = Recette.objects.all()

@@ -8,11 +8,17 @@ from .models import IngredientsRecette, PreparationRecette, Recette
 
 class RecetteSerializer(SerializerExtensionsMixin, serializers.ModelSerializer) :
     img = ImageSerializer(read_only = True)
-    category = CategoryRecetteSerializer()
+    category = CategoryRecetteSerializer(read_only = True)
 
     class Meta : 
         model = Recette
-        fields = ['id', 'name', 'time_preparation', 'time_cooking', 'img', 'category', 'favorite', 'difficulty']
+        fields = '__all__'
+
+class RecetteCreateSerializer(SerializerExtensionsMixin, serializers.ModelSerializer) :
+
+    class Meta : 
+        model = Recette
+        fields = '__all__'
 
 class IngredientsRecetteSerializer(serializers.ModelSerializer) :
     class Meta : 
