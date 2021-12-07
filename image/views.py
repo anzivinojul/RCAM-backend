@@ -6,3 +6,4 @@ class ImageViewSet(FlexFieldsModelViewSet):
 
     serializer_class = ImageSerializer
     queryset = ImagesRecette.objects.all()
+    filter_fields = ['name']

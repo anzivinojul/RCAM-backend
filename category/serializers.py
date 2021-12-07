@@ -4,6 +4,4 @@ from .models import CategorieRecette
 class CategoryRecetteSerializer(serializers.ModelSerializer) :
     class Meta :
         model = CategorieRecette
-        fields = [ 
-            "name"
-        ]
+        fields = '__all__'

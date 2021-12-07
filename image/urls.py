@@ -5,11 +5,11 @@ from rest_framework import routers
 
 from . import views
 
-imageRouter = routers.DefaultRouter()
-imageRouter.register('', views.ImageViewSet)
-
 urlpatterns = [
-    path("", include(imageRouter.urls)),
+    path("", views.ImageViewSet.as_view({'get': 'list'})),
+    path("", views.ImageViewSet.as_view({'post': 'list'})),
+    path("", views.ImageViewSet.as_view({'put': 'list'})),
+    path("", views.ImageViewSet.as_view({'delete': 'list'})),
 ]
 
 
