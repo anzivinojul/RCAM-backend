@@ -6,10 +6,10 @@ from category.models import CategorieRecette
 from image.models import ImagesRecette
 
 class Recette(models.Model) :
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, null = True)
     time_preparation = models.CharField(max_length=5, null = True)
     time_cooking = models.CharField(max_length=5, null = True)
-    people_number = models.CharField(max_length=2, default='1')
+    people_number = models.CharField(max_length=2, null = True)
     img = models.ForeignKey(ImagesRecette, related_name='images', on_delete=models.SET_DEFAULT, default=1)
     category = models.ForeignKey(CategorieRecette, related_name='categories', on_delete=models.SET_NULL, null = True)
     favorite = models.BooleanField()
@@ -25,17 +25,18 @@ class Recette(models.Model) :
 
 class IngredientsRecette(models.Model) :
 
-    name = models.CharField(max_length=255)
     recette = models.ForeignKey(Recette, on_delete=models.CASCADE)
 
+    ingredients = models.JSONField()
+
     def __str__(self) :
-        return self.recette.name + ' - ' + self.name
+        return self.recette.name
 
 class PreparationRecette(models.Model) :
 
     recette = models.ForeignKey(Recette, on_delete=models.CASCADE)
 
-    preparation = models.JSONField()
+    preparations = models.JSONField()
 
     def __str__(self) :
         return self.recette.name
