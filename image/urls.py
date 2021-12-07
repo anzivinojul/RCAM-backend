@@ -6,10 +6,8 @@ from rest_framework import routers
 from . import views
 
 urlpatterns = [
-    path("", views.ImageViewSet.as_view({'get': 'list'})),
-    path("", views.ImageViewSet.as_view({'post': 'list'})),
-    path("", views.ImageViewSet.as_view({'put': 'list'})),
-    path("", views.ImageViewSet.as_view({'delete': 'list'})),
+    path("", views.ImageList.as_view()),
+    path("upload", views.ImageCreateView.as_view())
 ]
 
 

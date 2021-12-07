@@ -4,13 +4,7 @@ from .models import ImagesRecette
 
 from versatileimagefield.serializers import VersatileImageFieldSerializer
 
-class ImageSerializer(FlexFieldsModelSerializer):
-    image = VersatileImageFieldSerializer(
-        sizes=[
-            ('full_size', 'url'),
-        ]
-    )
-
+class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ImagesRecette
-        fields = ['pk', 'name', 'image']
+        fields = '__all__'
