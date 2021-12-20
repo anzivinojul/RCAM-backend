@@ -7,7 +7,6 @@ from . import views
 
 urlpatterns = [
     path("", views.ImageList.as_view()),
-    path("add", views.ImageCreateView.as_view())
+    path("add", views.ImageCreateView.as_view()),
+    path("delete", views.ImageDelete.as_view()),
 ]
-
-

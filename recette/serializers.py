@@ -6,7 +6,7 @@ from category.serializers import CategoryRecetteSerializer
 from image.serializers import ImageSerializer
 from .models import IngredientsRecette, PreparationRecette, Recette
 
-class RecetteSerializer(SerializerExtensionsMixin, serializers.ModelSerializer) :
+class RecetteDetailSerializer(SerializerExtensionsMixin, serializers.ModelSerializer) :
     img = ImageSerializer(read_only = True)
     category = CategoryRecetteSerializer(read_only = True)
 
@@ -14,7 +14,7 @@ class RecetteSerializer(SerializerExtensionsMixin, serializers.ModelSerializer) 
         model = Recette
         fields = '__all__'
 
-class RecetteCreateSerializer(SerializerExtensionsMixin, serializers.ModelSerializer) :
+class RecetteSerializer(SerializerExtensionsMixin, serializers.ModelSerializer) :
 
     class Meta : 
         model = Recette

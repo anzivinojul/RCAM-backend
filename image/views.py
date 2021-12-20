@@ -1,3 +1,4 @@
+from django.db.models import query
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 from .models import ImagesRecette
@@ -13,6 +14,11 @@ class ImageList(generics.ListAPIView):
     serializer_class = ImageSerializer
     permission_classes = (AllowAny,)
     filter_fields = ['name']
+
+class ImageDelete(generics.DestroyAPIView):
+    queryset = ImagesRecette.objects.all()
+    serializer_class = ImageSerializer
+    permission_classes = (AllowAny,)
 
 class ImageCreateView(APIView):
     parser_class = (FileUploadParser,)
