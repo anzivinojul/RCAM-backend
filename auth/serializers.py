@@ -1,6 +1,7 @@
+from django.contrib.auth.models import User
+from rest_framework.generics import RetrieveAPIView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
-from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
 
@@ -46,4 +47,10 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+class UserSerializer(serializers.ModelSerializer):
+    
+    class Meta : 
+        model = User
+        fields = ['username', 'groups']     
         
