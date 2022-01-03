@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 from rest_framework import generics, viewsets
 from rest_framework.decorators import permission_classes
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
 from .models import Recette, IngredientsRecette, PreparationRecette
 from .serializers import RecetteDetailSerializer, RecetteSerializer, IngredientsRecetteSerializer, PreparationRecetteSerializer
 
