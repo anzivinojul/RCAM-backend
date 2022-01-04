@@ -187,6 +187,5 @@ django_heroku.settings(locals())
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:4200',
-    'https://anzivinojul.github.io/RCAM-frontend'
+    'http://localhost:4200'
 ]
