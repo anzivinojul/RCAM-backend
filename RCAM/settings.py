@@ -33,7 +33,8 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'rcam-backend.herokuapp.com'
+    'rcam-backend.herokuapp.com',
+    'https://anzivinojul.github.io/RCAM-frontend/',
 ]
 
 
