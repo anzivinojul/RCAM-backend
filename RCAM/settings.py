@@ -34,7 +34,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'rcam-backend.herokuapp.com',
-    'https://anzivinojul.github.io/RCAM-frontend/',
 ]
 
 
@@ -188,5 +187,6 @@ django_heroku.settings(locals())
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:4200'
+    'http://localhost:4200',
+    'https://sad-nightingale-809695.netlify.app'
 ]
