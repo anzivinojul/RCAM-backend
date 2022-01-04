@@ -188,6 +188,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:4200',
-    'https://rcam-backend.herokuapp.com',
     'https://anzivinojul.github.io/RCAM-frontend/'
 ]
