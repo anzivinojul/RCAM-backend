@@ -188,5 +188,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:4200',
-    'https://sad-nightingale-809695.netlify.app'
+    'https://rcam.netlify.app'
 ]
