@@ -1,5 +1,5 @@
 from django.db.models import query
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAdminUser
 from rest_framework.views import APIView
 from .models import ImagesRecette
 from .serializers import ImageSerializer
@@ -18,10 +18,11 @@ class ImageList(generics.ListAPIView):
 class ImageDelete(generics.DestroyAPIView):
     queryset = ImagesRecette.objects.all()
     serializer_class = ImageSerializer
-    permission_classes = (AllowAny,)
+    permission_classes = (IsAdminUser,)
 
 class ImageCreateView(APIView):
     parser_class = (FileUploadParser,)
+    permission_classes = (IsAdminUser,)
 
     def post(self, request, *args, **kwargs):
 

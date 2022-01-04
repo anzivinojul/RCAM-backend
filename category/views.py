@@ -1,7 +1,7 @@
 from django.db.models import query
 from django.shortcuts import render
 from rest_framework import generics, viewsets
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAdminUser
 from .models import CategorieRecette
 from .serializers import CategoryRecetteSerializer
 
@@ -13,7 +13,6 @@ class CategorieRecetteList(generics.ListAPIView) :
 
 class CategorieRecetteCreate(generics.CreateAPIView) :
     queryset = CategorieRecette.objects.all()
-    permission_classes = (AllowAny,)
+    permission_classes = (IsAdminUser,)
     serializer_class = CategoryRecetteSerializer
-    filter_fields = ['name']
 
