@@ -4,7 +4,6 @@
 *.pyc
 __pycache__
 db.sqlite3
-media
 
 # Backup files # 
 *.bak 
@@ -29,3 +28,10 @@ venv.bak/
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+#Images Media
+media/*.jpeg
+media/*.png
+media/*.jpg
+media/*.PNG
+media/*.JPG
