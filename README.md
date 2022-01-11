@@ -5,12 +5,17 @@
 1. Virtual Environment
 
 * python -m venv {URI}
-* {URI}\Scripts\activate.bat
+* .\venv\Scripts\activate.bat
 
 2. Dépendances
 
-* pip install django djangorestframework black pylint pylint-django
+* pip install -r requirements.txt
 
-3. Lancement du serveur
+3. Migrations de la base de données
+
+* python manage.py makemigrations
+* python manage.py migrate
+
+4. Lancement du serveur
 
 * python manage.py runserver
