@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'corsheaders',
     'versatileimagefield',
+    'cloudinary_storage',
 
     'recette.apps.RecetteConfig',
     'category.apps.CategoryConfig',
@@ -179,13 +180,21 @@ CORS_ALLOWED_ORIGINS = [
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+MEDIA_URL = '/RCAM/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
                              
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'anzivinojul',
+    'API_KEY': config("CLOUDINARY_API_KEY"),
+    'API_SECRET': config("CLOUDINARY_API_SECRET")
+}
