@@ -6,7 +6,7 @@ from versatileimagefield.fields import VersatileImageField, PPOIField
 class ImagesRecette(models.Model) :
 
     name = models.CharField(max_length=255)
-    image = models.ImageField(blank = False, default=9)
+    image = models.ImageField(blank = False, default=1)
 
     def __str__(self):
         return self.name
