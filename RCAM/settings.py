@@ -185,8 +185,6 @@ MEDIA_URL = '/RCAM/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-                             
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
