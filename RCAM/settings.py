@@ -173,7 +173,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:4200',
-    'https://rcam.netlify.app'
+    'https://rcam.netlify.app',
+    'https://lesrecettesamarc.fr',
+    'https://www.lesrecettesamarc.fr',
 ]
 
 # Static files (CSS, JavaScript, Images)
